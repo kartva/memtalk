@@ -48,9 +48,6 @@ void cleanup() {
 int main (int argc, char *argv[]) {
 	atexit(cleanup); // called on return from main or exit()
 
-	signal(SIGTERM, exit);
-	signal(SIGINT, exit);
-
 	if (argc != 3 || strcmp(argv[1], "-f") != 0) {
 		fprintf(stderr, "Usage: %s -f <shm_name>\n", argv[0]);
 		return -1;
